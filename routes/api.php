@@ -17,8 +17,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::prefix('sugar')->group(function () {
-    Route::get('hello', function() {
-        return 'hello';
-    });
-});
+Route::resource('sugars', 'SugarController');
